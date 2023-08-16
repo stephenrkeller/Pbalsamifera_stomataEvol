@@ -1,0 +1,5 @@
+# Kinship matrix estimated with the VanRaden (2008) method with 
+# AGHmatrix in R. I used 30200 LD pruned sites with no missingness.
+# 
+# KCF
+# 07/24/21
