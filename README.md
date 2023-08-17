@@ -16,8 +16,10 @@ The second set of hurdles is to convert the data from it's current format to the
 
 ### Create ind sets
 
+Using the NewHybrids filial calls, create a list of `ind_codes` for the balsam-only genotypes.
+
 ```{r, eval = F}
-# Filter for ind_set1 (balsam-only)
+# Filter for balsam-only
 
 # Read in the trait data for the test genotypes.
 dat_in <- read.table("~/Dropbox/admap/results/data2go/replicate_values/traits_ancestry_all_inds.txt", T, '\t')
