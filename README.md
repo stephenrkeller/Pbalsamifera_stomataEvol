@@ -4,11 +4,19 @@ This repo contains the data and scripts used to investigate the climatic drivers
 
 Collaborators: Karl Fetter (UConn), Baxter Worthing (UVM) and Stephen Keller (UVM)
 
-[TOC]
+## Table of Contents
+- [Pbalsamifera\_stomataEvol](#pbalsamifera_stomataevol)
+  - [Table of Contents](#table-of-contents)
+- [Quantiative Genetics](#quantiative-genetics)
+  - [Kinship Matrix](#kinship-matrix)
+    - [Create ind sets](#create-ind-sets)
+    - [Filter SNPs](#filter-snps)
+  - [Make Kinship matrix](#make-kinship-matrix)
+  - [View kinship matrix](#view-kinship-matrix)
 
-## Quantiative Genetics
+# Quantiative Genetics
 
-### Kinship Matrix
+## Kinship Matrix
 
 Estimate a kinship matrix, more precisely a genomic relatedness matrix, with `AGHmatrix`. The matrix will be used structure the intercepts of the random effects, which are correlated as defined by the kinship matrix. To build the matrix, use the `Gmatrix` function from `AGHmatrix`. For details see `https://pubmed.ncbi.nlm.nih.gov/27902800/`.
 
