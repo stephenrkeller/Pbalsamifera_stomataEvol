@@ -11,8 +11,8 @@ Collaborators: Karl Fetter (UConn), Baxter Worthing (UVM) and Stephen Keller (UV
   - [Kinship Matrix](#kinship-matrix)
     - [Create ind sets](#create-ind-sets)
     - [Filter SNPs](#filter-snps)
-  - [Make Kinship matrix](#make-kinship-matrix)
-  - [View kinship matrix](#view-kinship-matrix)
+    - [Make Kinship matrix](#make-kinship-matrix)
+    - [View kinship matrix](#view-kinship-matrix)
 
 # Quantiative Genetics
 
@@ -110,7 +110,7 @@ plink2 --bfile pb_pt_418inds_30209snps.NoMissing --export vcf --out pb_pt_418ind
 
 The file pb_pt_418inds_30209snps.NoMissing.LD0.geno.raw contains the genotypes formatted in 0/1/2.
 
-## Make Kinship matrix
+### Make Kinship matrix
 
 I'll compute the genomic relatedness matrix based on VanRaden (2009) METHOD. 
 
@@ -163,7 +163,7 @@ write.table(round(G, 3),
 
 ```
 
-## View kinship matrix
+### View kinship matrix
 
 ```{r}
 
