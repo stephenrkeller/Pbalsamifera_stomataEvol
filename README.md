@@ -4,6 +4,8 @@ This repo contains the data and scripts used to investigate the climatic drivers
 
 Collaborators: Karl Fetter (UConn), Baxter Worthing (UVM) and Stephen Keller (UVM)
 
+[TOC]
+
 ## Quantiative Genetics
 
 ### Kinship Matrix
@@ -75,14 +77,12 @@ Convert SNP data from the entire genotyped data set (N = 485) and the reference 
 
 To filter sites, first filter for the inds to keep and for monomorphic sites. Then output a list of sites to keep based on LD filter. Finally, input the list into an --extract command in plink.
 
-Some notes, The 418 ind set includes only BxT and BxB genotypes. There were a number of genotypes that have some evidence of admixture with angustifolia, as hybrids or tri-hybrids. Therefore the number of genotypes is less than I expected.
-
 ```{unix, eval = F}
 # Execute these commands in
-cd ~/Dropbox/admap/results/genotypes/pb_pt_pheno
+cd ~/Dropbox/landscape_stomata/gitlab/data/genotypes
 
 # Filter for inds, filter for complete sites 
-plink --bfile ../all_inds/pt_pb_Ninds_270940snps --noweb --keep ind_set1 --maf 0.004683841 --geno 0 --recode --make-bed --out pb_pt_418inds_33289snps.NoMissing
+plink --bfile ../all_inds/pt_pb_Ninds_270940snps --noweb --keep ind_set --maf 0.004683841 --geno 0 --recode --make-bed --out pb_pt_418inds_33289snps.NoMissing
 
 # Create list of LD filtered sites
 # See how many sites are retained with 10 kb windows that move 100 sites at a time with r2 = 0, or complete absence of LD
@@ -97,6 +97,7 @@ plink2 --bfile pb_pt_418inds_30209snps.NoMissing.LD0 --make-pgen --export A --ou
 
 # Output a vcf file too
 plink2 --bfile pb_pt_418inds_30209snps.NoMissing --export vcf --out pb_pt_418inds_30209snps.NoMissing
+
 ```
 
 The file pb_pt_418inds_30209snps.NoMissing.LD0.geno.raw contains the genotypes formatted in 0/1/2.
