@@ -1,0 +1,24 @@
+PLINK v2.00a5LM AVX2 Intel (13 Aug 2023)
+Options in effect:
+  --bfile nsf_poplar_351inds_12893snps.NoMissing
+  --indep-pairwise 200 50 0.1
+  --out nsf_poplar_351inds_Nnps.NoMissing.LD10
+
+Hostname: pop-os
+Working directory: /home/kf/Dropbox/landscape_stomata/gitlab/data/genotypes
+Start time: Wed Aug 16 22:54:57 2023
+
+Random number seed: 1692240897
+47730 MiB RAM detected, ~32461 available; reserving 23865 MiB for main
+workspace.
+Using up to 8 compute threads.
+351 samples (0 females, 0 males, 351 ambiguous; 351 founders) loaded from
+nsf_poplar_351inds_12893snps.NoMissing.fam.
+12893 variants loaded from nsf_poplar_351inds_12893snps.NoMissing.bim.
+Note: No phenotype data present.
+Calculating allele frequencies... done.
+--indep-pairwise (7 compute threads): 4565/12893 variants removed.
+Variant lists written to nsf_poplar_351inds_Nnps.NoMissing.LD10.prune.in and
+nsf_poplar_351inds_Nnps.NoMissing.LD10.prune.out .
+
+End time: Wed Aug 16 22:54:57 2023

@@ -78,7 +78,6 @@ write.table(ind_set %>% select(ind_code),
             sep="\t", quote = F, row.names = F, 
             col.names = F)
 ```
-
 ### Filter SNPs
 
 Convert SNP data from the entire genotyped data set (N = 485) and the reference datasets to a diploid genpop format. Total sample size for the file is 531. Inds in rows and genotypes in columns. Genotype is diploid and binary (1,2). I also want to filter for LD among the SNPs, which wil yield an optimal set of SNPs for estimating Fst.
@@ -89,12 +88,19 @@ To filter sites, first filter for the inds to keep and for monomorphic sites. Th
 # Execute these commands in
 cd ~/Dropbox/landscape_stomata/gitlab/data/genotypes
 
-# Filter for inds, filter for complete sites 
-plink --bfile ../all_inds/pt_pb_Ninds_270940snps --noweb --keep ind_set --maf 0.004683841 --geno 0 --recode --make-bed --out pb_pt_418inds_33289snps.NoMissing
+# Filter for inds, filter for complete sites. First use without --recode for a dry run
+plink2 --bfile nsf_poplar_485inds_227607snps --keep ../balsam_inds_N351 --maf 0.01 --geno 0 --make-bed --out nsf_poplar_351inds_Nsnps.NoMissing
+
+# Filter and create the new snp file
+plink2 --bfile nsf_poplar_485inds_227607snps --keep ../balsam_inds_N351 --maf 0.01 --geno 0 --make-bed --export vcf --out nsf_poplar_351inds_214714snps.NoMissing
 
 # Create list of LD filtered sites
 # See how many sites are retained with 10 kb windows that move 100 sites at a time with r2 = 0, or complete absence of LD
 plink --bfile pb_pt_418inds_33289snps.NoMissing --noweb --indep-pairwise 10 100 0 --out pb_pt_418inds_33289snps.NoMissing.LD0
+
+plink2 --bfile nsf_poplar_351inds_12893snps.NoMissing --indep-pairwise 200 50 0.1 --out nsf_poplar_351inds_Nnps.NoMissing.LD10
+_stop here. I think we need to call SNPs for just the balsam set_.
+
 
 # Filter sites for LD and output bfiles
 plink --bfile pb_pt_418inds_33289snps.NoMissing --noweb --extract pb_pt_418inds_33289snps.NoMissing.LD0.prune.in --make-bed --recode --out pb_pt_418inds_30209snps.NoMissing.LD0

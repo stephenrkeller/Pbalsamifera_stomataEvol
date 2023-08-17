@@ -1,0 +1,25 @@
+PLINK v1.90b3i 64-bit (18 Mar 2015)
+6 arguments: --make-bed --out nsf_poplar_485inds_227607snps --recode --vcf nsf_poplar_485inds_227607snps.recode.vcf
+Hostname: Wright
+Working directory: /data/karl/admap/results/genotypes/test_genos/complete
+Start time: Fri Apr  6 15:56:36 2018
+
+Random number seed: 1523044596
+64365 MB RAM detected; reserving 32182 MB for main workspace.
+--vcf: nsf_poplar_485inds_227607snps-temporary.bed +
+nsf_poplar_485inds_227607snps-temporary.bim +
+nsf_poplar_485inds_227607snps-temporary.fam written.
+227607 variants loaded from .bim file.
+485 people (0 males, 0 females, 485 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to nsf_poplar_485inds_227607snps.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 485 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+227607 variants and 485 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to nsf_poplar_485inds_227607snps.bed +
+nsf_poplar_485inds_227607snps.bim + nsf_poplar_485inds_227607snps.fam ... done.
+--recode to nsf_poplar_485inds_227607snps.ped +
+nsf_poplar_485inds_227607snps.map ... done.
+
+End time: Fri Apr  6 15:57:31 2018

@@ -1,0 +1,36 @@
+PLINK v2.00a5LM AVX2 Intel (13 Aug 2023)
+Options in effect:
+  --bfile nsf_poplar_485inds_227607snps
+  --export vcf
+  --geno 0
+  --keep ../balsam_inds_N351
+  --maf 0.01
+  --make-bed
+  --out nsf_poplar_351inds_214714snps.NoMissing
+
+Hostname: pop-os
+Working directory: /home/kf/Dropbox/landscape_stomata/gitlab/data/genotypes
+Start time: Wed Aug 16 22:25:06 2023
+
+Random number seed: 1692239106
+47730 MiB RAM detected, ~33048 available; reserving 23865 MiB for main
+workspace.
+Using up to 8 compute threads.
+485 samples (0 females, 0 males, 485 ambiguous; 485 founders) loaded from
+nsf_poplar_485inds_227607snps.fam.
+227607 variants loaded from nsf_poplar_485inds_227607snps.bim.
+Note: No phenotype data present.
+--keep: 351 samples remaining.
+351 samples (0 females, 0 males, 351 ambiguous; 351 founders) remaining after
+main filters.
+Calculating allele frequencies... done.
+--geno: 0 variants removed due to missing genotype data.
+214714 variants removed due to allele frequency threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+12893 variants remaining after main filters.
+Writing nsf_poplar_351inds_214714snps.NoMissing.fam ... done.
+Writing nsf_poplar_351inds_214714snps.NoMissing.bim ... done.
+Writing nsf_poplar_351inds_214714snps.NoMissing.bed ... done.
+--export vcf to nsf_poplar_351inds_214714snps.NoMissing.vcf ... done.
+
+End time: Wed Aug 16 22:25:06 2023

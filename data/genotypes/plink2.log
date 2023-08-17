@@ -1,0 +1,12 @@
+PLINK v2.00a5LM AVX2 Intel (13 Aug 2023)
+Options in effect:
+  --hlp
+
+Hostname: pop-os
+Working directory: /home/kf/Dropbox/landscape_stomata/gitlab/data/genotypes
+Start time: Wed Aug 16 22:14:21 2023
+
+Error: Unrecognized flag ('--hlp').
+For more info, try "plink2 --help <flag name>" or "plink2 --help | more".
+
+End time: Wed Aug 16 22:14:21 2023
