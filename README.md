@@ -18,11 +18,11 @@ The second set of hurdles is to convert the data from it's current format to the
 
 Using the NewHybrids filial calls, create a list of `ind_codes` for the balsam-only genotypes.
 
-```{r, eval = F}
+```{R, eval = F}
 # Filter for balsam-only
 
 # Read in the trait data for the test genotypes.
-dat_in <- read.table("~/Dropbox/admap/results/data2go/replicate_values/traits_ancestry_all_inds.txt", T, '\t')
+nh <- read.table("~/Dropbox/landscape_stomata/data/NewHybrids_Ancestry.txt", T, '\t')
 
 # Read in file of known angustifolia & deltoides hybirds
 ang_del = read.table("~/Dropbox/admap/results/global_ancestry/ang_del_inds",F,'\t')
