@@ -20,19 +20,32 @@ Using the NewHybrids filial calls, create a list of `ind_codes` for the balsam-o
 
 ```{R, eval = F}
 # Filter for balsam-only
+library(tidyverse)
 
 # Read in the trait data for the test genotypes.
-nh <- read.table("~/Dropbox/landscape_stomata/data/NewHybrids_Ancestry.txt", T, '\t')
+nh <- read.table("~/Dropbox/landscape_stomata/gitlab/data/NewHybrids_Ancestry.txt", T, '\t')
+
+# Take a look at a contingency table of the ancestry and filial groups (sanity check)
+table(nh$filial_call, nh$ancestry)
+         
+          BxA BxB BxD BxT
+  F1       13   0  15   0
+  F2        3   0   0   0
+  P1.F1     0   0   0   2
+  P1.F2     0   0   0  31
+  P1.P1F1   0   0   0  11
+  P1.P1F2   0   0   0  32
+  Pure_1    0 351   0   0
 
 # Read in file of known angustifolia & deltoides hybirds
 ang_del = read.table("~/Dropbox/admap/results/global_ancestry/ang_del_inds",F,'\t')
 names(ang_del) <- "ind_code"
 
 # Filter for balsam and trichocarpa inds
-ind_set1 <- dat_in %>% 
-  filter(ancestry1 == "BxB" | ancestry1 == "BxT") %>%
+ind_set <- nh %>% 
+  filter(ancestry == "BxB") %>%
   filter(!ind_code %in% ang_del$ind_code) %>% # filter for ang_del
-  select(ind_code, ancestry1, prop_B, prop_T, global_ancestry) %>%
+  select(ind_code, ancestry, prop_B) %>%
   distinct(ind_code, .keep_all = TRUE) %>%
   mutate(keep = paste(lapply(str_split(ind_code, "_"), '[[', 1 ),
                       lapply(str_split(ind_code, "_"), '[[', 2 ),
@@ -40,9 +53,18 @@ ind_set1 <- dat_in %>%
          ) %>%
   select(keep)
 
+ind_set <- nh %>% 
+  filter(ancestry == "BxB") %>%
+  filter(!ind_code %in% ang_del$ind_code) %>% # filter for ang_del
+  select(ind_code, ancestry, prop_B) %>%
+  distinct(ind_code, .keep_all = TRUE)
+
+# Check that all the balsams have expected ancestry of 1
+table(ind_set$prop_B)
+
 # This yields 351 balsam-only genotypes
-write.table(ind_set1, 
-            "~/Dropbox/admap/results/genotypes/pb_pt_pheno/ind_set1",
+write.table(ind_set %>% select(ind_code), 
+            "~/Dropbox/landscape_stomata/gitlab/data/balsam_inds",
             sep="\t", quote = F, row.names = F, 
             col.names = F)
 ```
